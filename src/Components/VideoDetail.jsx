@@ -1,14 +1,15 @@
 import { Paper, Typography } from "@mui/material";
+import React from "react";
 const VideoDetail = ({
   video: {
-    id: { videoID },
+    id: { videoId },
     snippet: { title, channelTitle, description },
   },
 }) => {
-  if (!videoID) {
+  if (!videoId) {
     return <div>Loading...</div>;
   }
-  const videoSrc = `https://www.youtube.com/embed/${videoID}`;
+  const videoSrc = `https://www.youtube.com/embed/${videoId}`;
   return (
     <React.Fragment>
       <Paper elevation={6} style={{ height: "70%" }}>
@@ -18,7 +19,13 @@ const VideoDetail = ({
           src={videoSrc}
         />
       </Paper>
-      <Paper elevation={6} style={{ padding: "15px" }}></Paper>
+      <Paper elevation={6} style={{ padding: "15px" }}>
+        <Typography variant="h4">
+          {title} - {channelTitle}
+        </Typography>
+        <Typography variant="subtitle1">{channelTitle}</Typography>
+        <Typography variant="subtitle2">{description}</Typography>
+      </Paper>
     </React.Fragment>
   );
 };
