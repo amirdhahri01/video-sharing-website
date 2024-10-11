@@ -1,14 +1,14 @@
 import { Grid2 } from "@mui/material";
 import VideoItem from "./VideoItem";
 
-const VideoList = ({ videos, onSelectVideo }) => {
-  const listOfVideos = videos.map((video) => {
+const VideoList = ({ videos, onVideoSelected }) => {
+  const listOfVideos = videos.map((video) => (
     <VideoItem
-      onSelectVideo={onSelectVideo}
-      key={video.videoId}
+      onVideoSelected={onVideoSelected}
+      key={video.id.videoId}
       video={video}
-    />;
-  });
+    />
+  ));
   return (
     <Grid2 container spacing={10}>
       {listOfVideos}
