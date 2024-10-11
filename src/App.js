@@ -15,14 +15,16 @@ function App() {
   return (
     <Grid2 justifyContent={"center"} container spacing={10}>
       <Grid2 size={{ xs: 11 }}>
-        <Grid2 size={{ xs: 12 }}>
-          <SearchBar onSubmit={handleSubmit} />
-        </Grid2>
-        <Grid2 size={{ xs: 8 }}>
-          <VideoDetail video={selectedVideo} />
-        </Grid2>
-        <Grid2 size={{ xs: 4 }}>
-          <VideoList videos={videos} onVideoSelected={setSelectedVideo} />
+        <Grid2 container spacing={10}>
+          <Grid2 size={{ xs: 12 }}>
+            <SearchBar onSubmit={handleSubmit} />
+          </Grid2>
+          <Grid2 size={{ xs: 8 }}>
+            <VideoDetail video={selectedVideo} />
+          </Grid2>
+          <Grid2 size={{ xs: 4 }}>
+            <VideoList videos={videos} onVideoSelected={setSelectedVideo} />
+          </Grid2>
         </Grid2>
       </Grid2>
     </Grid2>
