@@ -4,6 +4,7 @@ import { Grid2 } from "@mui/material";
 import youtube from "./api/youtube";
 import SearchBar from "./Components/SearchBar";
 import VideoDetail from "./Components/VideoDetail";
+import VideoList from "./Components/VideoList";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -17,8 +18,12 @@ function App() {
         <Grid2 size={{ xs: 12 }}>
           <SearchBar onSubmit={handleSubmit} />
         </Grid2>
-        <Grid2 size={{ xs: 8 }}>{<VideoDetail video={selectedVideo} />}</Grid2>
-        <Grid2 size={{ xs: 4 }}>{/* {VideoList} */}</Grid2>
+        <Grid2 size={{ xs: 8 }}>
+          <VideoDetail video={selectedVideo} />
+        </Grid2>
+        <Grid2 size={{ xs: 4 }}>
+          <VideoList videos={videos} onVideoSelected={setSelectedVideo} />
+        </Grid2>
       </Grid2>
     </Grid2>
   );
